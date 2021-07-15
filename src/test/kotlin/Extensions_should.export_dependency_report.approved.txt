@@ -1,0 +1,1 @@
+[{"name":"com.libyear","projectVersion":"0.0.1","latestVersion":"1.0.0","versionDiff":{"any":31,"major":22,"minor":5,"fixes":3}},{"name":"kotlinx.serialization","projectVersion":"0.0.1","latestVersion":"1.0.0","versionDiff":{"any":10,"major":2,"minor":5,"fixes":3}}]

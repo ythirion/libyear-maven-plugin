@@ -1,0 +1,4 @@
+The following dependencies have newer versions:
+com.libyear 0.0.1 -> 1.0.0 (31 version(s) behind -> 22 major(s) | 5 minor(s) | 3 fix(es))
+kotlinx.serialization 0.0.1 -> 1.0.0 (10 version(s) behind -> 2 major(s) | 5 minor(s) | 3 fix(es))
+> 41 versions behind for 2 dependencies -> 24 major(s) | 10 minor(s) | 6 fix(es)
