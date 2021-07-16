@@ -15,10 +15,8 @@ class LibYearMojo : AbstractVersionsUpdaterMojo() {
         retrieveDependenciesWithUpdates()
             .logResult { log.info(it) }
             .toReport()
-            .runCatching {
-                outputDirectory?.create()
-                    .saveToFile("${project.name}.json", this)
-            }.onFailure { ex -> log.error(ex) }
+            .runCatching { saveToFile(this) }
+            .onFailure { ex -> log.error(ex) }
     }
 
     private fun retrieveDependenciesWithUpdates(): Dependencies {
@@ -32,6 +30,11 @@ class LibYearMojo : AbstractVersionsUpdaterMojo() {
                 )
             }
             .filter { it.versionDiff.any > 0 }
+    }
+
+    private fun saveToFile(report: String) {
+        outputDirectory?.create()
+            .saveToFile("${project.name}.json", report)
     }
 
     override fun update(pom: ModifiedPomXMLEventReader?) {
