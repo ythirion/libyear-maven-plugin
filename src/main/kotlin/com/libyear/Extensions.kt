@@ -31,12 +31,13 @@ fun Dependencies.aggReport() =
 fun Dependencies.toReport() = Json.encodeToString(this)
 
 fun Dependencies.logResult(log: (info: String) -> Unit): Dependencies {
-    if (any()) {
-        log("The following dependencies have newer versions:")
-        forEach { log(it.toString()) }
-        log(aggReport())
-    } else {
-        log("No dependency updates found. WELL DONE !!!")
+    when {
+        this.isEmpty() -> log("No dependency updates found. WELL DONE !!!")
+        else -> {
+            log("The following dependencies have newer versions:")
+            forEach { log(it.toString()) }
+            log(aggReport())
+        }
     }
     return this
 }
